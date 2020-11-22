@@ -32,5 +32,20 @@ public class RealNumber {
     return total;
   }
 
+  public RealNumber multiply(RealNumber other) {
+    RealNumber product = new RealNumber(this.getValue() * other.getValue());
+    return product;
+  }
+
+  public RealNumber divide(RealNumber other) {
+    RealNumber quotient = new RealNumber(this.getValue() / other.getValue());
+    return quotient;
+  }
+
+  public RealNumber subtract(RealNumber other) {
+    RealNumber difference = new RealNumber(this.getValue() - other.getValue());
+    return difference;
+  }
+
 
 }

@@ -23,11 +23,8 @@ public class Tester {
     RealNumber g = new RealNumber(0.75);
     System.out.println(f.add(g)); //Java calls RealNumber's getValue() automatically
     RealNumber h = new RealNumber(g.add(f).getValue());
-    //add returns RealNumber, but constructor needs double
+    //add returns RealNumber, but constructor needs double; thas why we have .getValue()
     System.out.println(h);
-
-    System.out.println(e.add(e));
-    System.out.println(e.add(c));
 
     for (int i = 0; i < 50; i++) {
       RealNumber pos = new RealNumber(Math.random()*10000);
@@ -44,5 +41,45 @@ public class Tester {
       System.out.println();
     }
 
+    System.out.println(e.add(e));
+    System.out.println(e.add(c));
+
+    for (int i = 0; i < 50; i++) {
+      RealNumber pos = new RealNumber(Math.random()*100);
+      RealNumber neg = new RealNumber(Math.random()*-100);
+      System.out.println(pos);
+      System.out.println(neg);
+
+      RealNumber product = new RealNumber(pos.multiply(neg).getValue());
+      System.out.println(product); //all should be (-)
+      RealNumber quotient = new RealNumber(product.divide(neg).getValue());
+      System.out.println(quotient); //should be equal to pos
+      System.out.println(pos.equals(quotient)); //should all be true
+      System.out.println();
+    }
+
+    System.out.println(e.multiply(f));
+    System.out.println(f.multiply(d));
+    System.out.println(e.divide(f));
+    System.out.println(f.divide(e));
+
+    for (int i = 0; i < 50; i++) {
+      RealNumber pos = new RealNumber(Math.random()*10000);
+      RealNumber neg = new RealNumber(Math.random()*-10000);
+      System.out.println(pos);
+      System.out.println(neg);
+
+      //RealNumber e has value 0.0; should be all true
+      System.out.println(pos.subtract(pos).equals(e));
+      System.out.println(neg.subtract(neg).equals(e));
+
+      System.out.println(pos.subtract(neg)); //should all be (+)
+      System.out.println(neg.subtract(pos)); //should all be (-)
+      System.out.println();
+    }
+
+    System.out.println(e.subtract(e));
+    RealNumber j = new RealNumber(f.subtract(g).getValue());
+    System.out.println(j);
   }
 }
