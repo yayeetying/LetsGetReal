@@ -24,5 +24,13 @@ public class RealNumber {
     return percentDiff <= 0.001;
   }
 
+  public RealNumber add(RealNumber other) {
+    //other can be ANY RealNumber, including a RationalNumber
+    //or other subclasses of RealNumber (that aren't written yet)
+    double sum = this.getValue() + other.getValue();
+    RealNumber total = new RealNumber(sum);
+    return total;
+  }
+
 
 }
