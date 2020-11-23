@@ -168,8 +168,9 @@ public class Tester {
     RationalNumber gray = new RationalNumber(-28, -7);
     RationalNumber bae = new RationalNumber(-28, -2);
     RationalNumber purple = new RationalNumber(-28, 2);
+    RationalNumber yay = new RationalNumber(11,7);
 
-    RationalNumber[] colors = new RationalNumber[7];
+    RationalNumber[] colors = new RationalNumber[8];
     colors[0] = bulue;
     colors[1] = red;
     colors[2] = yellow;
@@ -177,9 +178,16 @@ public class Tester {
     colors[4] = gray;
     colors[5] = bae;
     colors[6] = purple;
+    colors[7] = yay;
 
     for (int i = 0; i < colors.length; i++) {
       System.out.println(colors[i]); //calls toString
     }
+
+    System.out.println();
+    System.out.println(yellow.multiply(bulue));
+    System.out.println(bae.multiply(purple));
+    System.out.println(bae.multiply(yay));
+    System.out.println(purple.multiply(yay));
   }
 }

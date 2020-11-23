@@ -87,4 +87,20 @@ public class RationalNumber extends RealNumber {
     denominator /= common;
   }
 
+  public RationalNumber multiply(RationalNumber other) {
+    RationalNumber product = new RationalNumber(this.getNumerator()*other.getNumerator(),
+                                                this.getDenominator()*other.getDenominator());
+    return product;
+  }
+
+  public RationalNumber divide(RationalNumber other) {
+    RationalNumber quotient = new RationalNumber(this.getNumerator()*other.reciprocal().getNumerator(),
+                                                this.getDenominator()*other.reciprocal().getDenominator());
+    return quotient;
+  }
+
+  // public RationalNumber add(RationalNumber other) {
+  //
+  // }
+
 }
