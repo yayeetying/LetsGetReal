@@ -99,8 +99,31 @@ public class RationalNumber extends RealNumber {
     return quotient;
   }
 
-  // public RationalNumber add(RationalNumber other) {
-  //
-  // }
+  public static int getLCD(int a, int b) {
+    int gcd = 1;
+    int factor = 1;
+    while (true) {
+      if ((factor * a) % b == 0) {
+        return factor * a;
+      }
+      factor++;
+    }
+  }
+
+  public RationalNumber add(RationalNumber other) {
+    int deno = getLCD(this.getDenominator(), other.getDenominator());
+    int nume1 = (deno/this.getDenominator()) * getNumerator();
+    int nume2 = (deno/other.getDenominator()) * other.getDenominator();
+    RationalNumber sum = new RationalNumber(nume1+nume2, deno);
+    return sum;
+  }
+
+  public RationalNumber subtract(RationalNumber other) {
+    int deno = getLCD(this.getDenominator(), other.getDenominator());
+    int nume1 = (deno/this.getDenominator()) * getNumerator();
+    int nume2 = (deno/other.getDenominator()) * other.getDenominator();
+    RationalNumber difference = new RationalNumber(nume1-nume2, deno);
+    return difference;
+  }
 
 }
