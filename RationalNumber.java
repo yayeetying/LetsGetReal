@@ -41,12 +41,16 @@ public class RationalNumber extends RealNumber {
     return reci;
   }
 
-  //Rational.equals(Rational) calls this
+  //Rational.equals(Rational) calls this (RationalNumber method)
   //Real.equals(Real) or Real.equals(Rational) calls equals method from RealNumber class
   //what about Rational.equals(Real)? *calls equals method from RealNumber class
   public boolean equals(RationalNumber other) { //overriden method
     //System.out.println("pog");
     return this.getNumerator() == other.getNumerator() && this.getDenominator() == other.getDenominator();
+  }
+
+  public String toString() {
+    return "" + this.getNumerator() + "/" + this.getDenominator();
   }
 
 }

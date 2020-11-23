@@ -145,7 +145,12 @@ public class Tester {
     System.out.println(cat.equals(bub));
     System.out.println(tub.equals(f));
     System.out.println(tub.equals(a));
+    System.out.println();
 
-
+    for (int i = 0; i < rat.length; i++) {
+      System.out.println(rat[i]); //calls toString() method
+      System.out.println(rat[i].getValue());
+      System.out.println();
+    }
   }
 }
