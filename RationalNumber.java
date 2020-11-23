@@ -35,4 +35,10 @@ public class RationalNumber extends RealNumber {
     return denominator;
   }
 
+  //return a new RationalNumber w/ nume and deno of this RationalNumber reversed
+  public RationalNumber reciprocal() {
+    RationalNumber reci = new RationalNumber(this.getDenominator(), this.getNumerator());
+    return reci;
+  }
+
 }

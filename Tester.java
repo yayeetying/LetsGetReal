@@ -91,14 +91,18 @@ public class Tester {
     RationalNumber log = new RationalNumber(0, 0);
     RationalNumber stonks = new RationalNumber(0, 11);
     RationalNumber pog = new RationalNumber(10, 0);
+    RationalNumber tog = new RationalNumber(1, 3);
+    RationalNumber fog = new RationalNumber(3, 1);
 
-    RationalNumber[] rat = new RationalNumber[6];
+    RationalNumber[] rat = new RationalNumber[8];
     rat[0] = cat;
     rat[1] = dog;
     rat[2] = frog;
     rat[3] = log;
     rat[4] = stonks;
     rat[5] = pog;
+    rat[6] = tog;
+    rat[7] = fog;
 
     for (int i = 0; i < rat.length; i++) {
       System.out.println(rat[i].getNumerator());
@@ -106,5 +110,24 @@ public class Tester {
       System.out.println(rat[i].getValue());
       System.out.println();
     }
+
+    RealNumber bub = new RealNumber(0.6);
+    System.out.println(bub.equals(cat));
+    System.out.println(cat.equals(bub));
+    System.out.println(f.add(log));
+    System.out.println(f.add(dog));
+    System.out.println(log.add(f));
+    System.out.println();
+
+    for (int i = 0; i < rat.length; i++) {
+      RationalNumber recipro = rat[i].reciprocal();
+      System.out.println(recipro.getNumerator());
+      System.out.println(recipro.getDenominator());
+      System.out.println(recipro.getValue());
+      //System.out.println(rat[i].reciprocal()); //automatically calls toString
+      System.out.println();
+    }
+
+
   }
 }
