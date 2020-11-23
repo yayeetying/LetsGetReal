@@ -81,5 +81,15 @@ public class Tester {
     System.out.println(e.subtract(e));
     RealNumber j = new RealNumber(f.subtract(g).getValue());
     System.out.println(j);
+
+    System.out.println();
+    System.out.println();
+
+    RationalNumber cat = new RationalNumber(3,5);
+    RationalNumber dog = new RationalNumber(-10, 2);
+    RationalNumber frog = new RationalNumber(2, -10);
+    RationalNumber log = new RationalNumber(0, 0);
+    RationalNumber stonks = new RationalNumber(0, 1);
+    RationalNumber pog = new RationalNumber(1, 0);
   }
 }
