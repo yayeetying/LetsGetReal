@@ -89,7 +89,22 @@ public class Tester {
     RationalNumber dog = new RationalNumber(-10, 2);
     RationalNumber frog = new RationalNumber(2, -10);
     RationalNumber log = new RationalNumber(0, 0);
-    RationalNumber stonks = new RationalNumber(0, 1);
-    RationalNumber pog = new RationalNumber(1, 0);
+    RationalNumber stonks = new RationalNumber(0, 11);
+    RationalNumber pog = new RationalNumber(10, 0);
+
+    RationalNumber[] rat = new RationalNumber[6];
+    rat[0] = cat;
+    rat[1] = dog;
+    rat[2] = frog;
+    rat[3] = log;
+    rat[4] = stonks;
+    rat[5] = pog;
+
+    for (int i = 0; i < rat.length; i++) {
+      System.out.println(rat[i].getNumerator());
+      System.out.println(rat[i].getDenominator());
+      System.out.println(rat[i].getValue());
+      System.out.println();
+    }
   }
 }
