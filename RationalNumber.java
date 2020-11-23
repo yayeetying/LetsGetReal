@@ -21,6 +21,7 @@ public class RationalNumber extends RealNumber {
       numerator *= -1;
       denominator *= -1;
     }
+    if (this.getValue() != 0.0) reduce(); //(1/-4); switch the negate sign
   }
 
   public double getValue() { //overridden method
@@ -56,6 +57,14 @@ public class RationalNumber extends RealNumber {
   //calculate the GCD of 2 integers; http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
   //public static int gcd(int a, int b) {
   private static int gcd(int a, int b) {
+  //   int gcd = 1;
+  //   for(int i = 2; i < Math.min(a, b); i++) {
+  //     if(a % i == 0 && b % i == 0) {
+  //       gcd = i;
+  //     }
+  //   }
+  //   return gcd;
+  // }
     if (a < b) {
       int temp = a;
       a = b;
@@ -70,6 +79,12 @@ public class RationalNumber extends RealNumber {
       }
     }
     return b;
+  }
+
+  private void reduce() {
+    int common = gcd(numerator, denominator);
+    numerator /= common;
+    denominator /= common;
   }
 
 }

@@ -160,5 +160,26 @@ public class Tester {
     // System.out.println(RationalNumber.gcd(100, 255));
     // System.out.println(RationalNumber.gcd(7, 11));
     // System.out.println(RationalNumber.gcd(63, 11));
+
+    RationalNumber bulue = new RationalNumber(63, 7);
+    RationalNumber red = new RationalNumber(255,100);
+    RationalNumber yellow = new RationalNumber(1000,100);
+    RationalNumber green = new RationalNumber(-25,100);
+    RationalNumber gray = new RationalNumber(-28, -7);
+    RationalNumber bae = new RationalNumber(-28, -2);
+    RationalNumber purple = new RationalNumber(-28, 2);
+
+    RationalNumber[] colors = new RationalNumber[7];
+    colors[0] = bulue;
+    colors[1] = red;
+    colors[2] = yellow;
+    colors[3] = green;
+    colors[4] = gray;
+    colors[5] = bae;
+    colors[6] = purple;
+
+    for (int i = 0; i < colors.length; i++) {
+      System.out.println(colors[i]); //calls toString
+    }
   }
 }
