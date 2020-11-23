@@ -128,6 +128,24 @@ public class Tester {
       System.out.println();
     }
 
+    //RationalNumber.equals(RationalNumber) --> calls equals method from RationalNumber class
+    System.out.println(log.equals(log));
+    System.out.println(pog.equals(log));
+    System.out.println(stonks.equals(pog));
+    System.out.println(tog.equals(fog.reciprocal()));
+    System.out.println();
+    //RealNumber.equals(RealNumber) --> calls equals method from RealNumber class
+    //RealNumber.equals(RationalNumber) --> calls equals method from RealNumber class
+    System.out.println(bub.equals(cat));
+    RationalNumber tub = new RationalNumber(51, 4);
+    System.out.println(f.equals(tub));
+    System.out.println(a.equals(tub));
+    System.out.println();
+    //RationalNumber.equals(RealNumber) --> calls equals method from RealNumber class
+    System.out.println(cat.equals(bub));
+    System.out.println(tub.equals(f));
+    System.out.println(tub.equals(a));
+
 
   }
 }

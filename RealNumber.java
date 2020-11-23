@@ -16,6 +16,7 @@ public class RealNumber {
   }
 
   public boolean equals(RealNumber other) {
+    //System.out.println("yoo");
     if (this.getValue() == 0 && other.getValue() == 0) {
       return true;
     }
