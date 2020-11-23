@@ -53,4 +53,23 @@ public class RationalNumber extends RealNumber {
     return "" + this.getNumerator() + "/" + this.getDenominator();
   }
 
+  //calculate the GCD of 2 integers; http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
+  //public static int gcd(int a, int b) {
+  private static int gcd(int a, int b) {
+    if (a < b) {
+      int temp = a;
+      a = b;
+      b = temp;
+    } //a will always be >= b
+    int r = 1;
+    while (r != 0) {
+      r = a%b;
+      if (r != 0) {
+        a = b;
+        b = r;
+      }
+    }
+    return b;
+  }
+
 }

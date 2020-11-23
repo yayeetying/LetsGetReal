@@ -152,5 +152,13 @@ public class Tester {
       System.out.println(rat[i].getValue());
       System.out.println();
     }
+
+    // System.out.println(RationalNumber.gcd(210, 45));
+    // System.out.println(RationalNumber.gcd(45, 30));
+    // System.out.println(RationalNumber.gcd(30, 15));
+    // System.out.println(RationalNumber.gcd(30, 30));
+    // System.out.println(RationalNumber.gcd(100, 255));
+    // System.out.println(RationalNumber.gcd(7, 11));
+    // System.out.println(RationalNumber.gcd(63, 11));
   }
 }
