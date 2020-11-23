@@ -189,5 +189,11 @@ public class Tester {
     System.out.println(bae.multiply(purple));
     System.out.println(bae.multiply(yay));
     System.out.println(purple.multiply(yay));
+    System.out.println();
+
+    System.out.println(yellow.add(bae));
+    System.out.println(bae.add(yellow));
+
+
   }
 }
