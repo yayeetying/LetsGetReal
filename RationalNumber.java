@@ -113,7 +113,7 @@ public class RationalNumber extends RealNumber {
   public RationalNumber add(RationalNumber other) {
     int deno = getLCD(this.getDenominator(), other.getDenominator());
     int nume1 = (deno/this.getDenominator()) * getNumerator();
-    int nume2 = (deno/other.getDenominator()) * other.getNenominator();
+    int nume2 = (deno/other.getDenominator()) * other.getNumerator();
     RationalNumber sum = new RationalNumber(nume1+nume2, deno);
     return sum;
   }
@@ -121,7 +121,7 @@ public class RationalNumber extends RealNumber {
   public RationalNumber subtract(RationalNumber other) {
     int deno = getLCD(this.getDenominator(), other.getDenominator());
     int nume1 = (deno/this.getDenominator()) * getNumerator();
-    int nume2 = (deno/other.getDenominator()) * other.getNenominator();
+    int nume2 = (deno/other.getDenominator()) * other.getNumerator();
     RationalNumber difference = new RationalNumber(nume1-nume2, deno);
     return difference;
   }
