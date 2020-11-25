@@ -14,7 +14,7 @@ public abstract class Number {
     if (getValue() == 0 && other.getValue() == 0) {
       return true;
     }
-    double percentDiff = Math.abs((this.getValue()-other.getValue()) /
+    double percentDiff = (Math.abs(this.getValue()-other.getValue()) /
                         ((this.getValue()+other.getValue()) /2.0)) * 100;
     return percentDiff <= 0.001;
   }

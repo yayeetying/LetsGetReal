@@ -46,7 +46,7 @@ public class RationalNumber extends Number {
   //Real.equals(Real) or Real.equals(Rational) calls equals method from Number class
   //what about Rational.equals(Real)? *calls equals method from Number class
   public boolean equals(RationalNumber other) { //overriden method
-    //System.out.println("pog");
+    if (this.getNumerator() == 0 && other.getNumerator() == 0) return true;
     return this.getNumerator() == other.getNumerator() && this.getDenominator() == other.getDenominator();
   }
 
@@ -88,12 +88,11 @@ public class RationalNumber extends Number {
     return quotient;
   }
 
-  //static method to get least common denominator
+  //static helper method to get least common denominator
   public static int getLCD(int a, int b) {
     int common = gcd(a,b);
     return (a*b)/common;
   }
-  //30/-50 - 63/81. Expected -7/5 | Output -70/50
 
   public RationalNumber add(RationalNumber other) {
     int deno = getLCD(this.getDenominator(), other.getDenominator());

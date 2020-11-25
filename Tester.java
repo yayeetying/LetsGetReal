@@ -225,5 +225,10 @@ public class Tester {
     System.out.println(bulue.multiply(yellow));
     System.out.println(bulue.divide(yellow));
     System.out.println(yellow.divide(bulue));
+
+    System.out.println();
+    RationalNumber ree = new RationalNumber(30,-50);
+    RationalNumber reee = new RationalNumber(63,81);
+    System.out.println(ree.subtract(reee));
   }
 }
