@@ -1,5 +1,6 @@
+// public class RationalNumber extends Number {
 public class RationalNumber extends RealNumber {
-  //'extends': RationalNumber (subclass/child) inherited RealNumber (superclass/parent)
+  //'extends': RationalNumber (subclass/child) inherited Number (superclass/parent)
   //subclass inherits instance variables and methods from superclass
   //can override inherited methods in the subclass to modify the fxn of the method
     //specifically in that subclass
@@ -21,7 +22,13 @@ public class RationalNumber extends RealNumber {
       numerator *= -1;
       denominator *= -1;
     }
-    reduce();
+    reduce(); //why do my fractions look like 1/-4?
+    //System.out.println(""+numerator +" "+ denominator); //-/+
+    // if (numerator > 0 || denominator < 0) reduce();
+    // if (denominator != 0 && numerator > 0) {
+    //   System.out.println("Woah");
+    //   reduce();
+    // }
   }
 
   public double getValue() { //overridden method
@@ -51,25 +58,42 @@ public class RationalNumber extends RealNumber {
   }
 
   public String toString() {
-    //if (getDenominator() == 1) return "" + getNumerator();
-    //if (getNumerator() == 0) return "" + 0;
-    return "" + this.getNumerator() + "/" + this.getDenominator();
+    if (getDenominator() == 1) return "" + getNumerator();
+    if (getNumerator() == 0) return "" + 0;
+    return "" + getNumerator() + "/" + getDenominator();
   }
 
   private static int gcd(int a, int b) {
-    int gcd = 1;
-    for(int i = 2; i <= Math.min(a, b); i++) {
-      if(a % i == 0 && b % i == 0) {
-        gcd = i;
+    if (a != 0 && a < b) {
+      int temp = a;
+      a = b;
+      b = temp;
+    } //a will always be >= b
+    int r = 1;
+    while (r != 0) {
+      r = a%b;
+      if (r != 0) {
+        a = b;
+        b = r;
       }
     }
-    return gcd;
+    return b;
+    // int divisor = 1;
+    // for(int i = 2; i <= Math.min(a, b); i++) {
+    //   if(a % i == 0 && b % i == 0) {
+    //     divisor = i;
+    //   }
+    // }
+    // //System.out.println(gcd);
+    // //holy why does it not work/?????
+    // return divisor;
   }
 
   private void reduce() {
-    int common = gcd(numerator, denominator);
+    int common = gcd(getNumerator(), getDenominator());
     numerator /= common;
     denominator /= common;
+    //System.out.println(""+numerator+" " + denominator);
   }
 
   public RationalNumber multiply(RationalNumber other) {
@@ -86,6 +110,14 @@ public class RationalNumber extends RealNumber {
 
   //static method to get least common denominator
   public static int getLCD(int a, int b) {
+    // int gcd = 1;
+    // int factor = 1;
+    // while (true) {
+    //   if ((factor * a) % b == 0) {
+    //     return factor * a;
+    //   }
+    //   factor++;
+    // }
     int common = gcd(a,b);
     return (a*b)/common;
   }
