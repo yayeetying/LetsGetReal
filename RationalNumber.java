@@ -21,13 +21,7 @@ public class RationalNumber extends Number {
       numerator *= -1;
       denominator *= -1;
     }
-    reduce(); //why do my fractions look like 1/-4?
-    //System.out.println(""+numerator +" "+ denominator); //-/+
-    // if (numerator > 0 || denominator < 0) reduce();
-    // if (denominator != 0 && numerator > 0) {
-    //   System.out.println("Woah");
-    //   reduce();
-    // }
+    reduce();
   }
 
   public double getValue() { //overridden method
@@ -63,35 +57,23 @@ public class RationalNumber extends Number {
   }
 
   private static int gcd(int a, int b) {
-    if (a != 0 && a < b) {
-      int temp = a;
-      a = b;
-      b = temp;
-    } //a will always be >= b
-    int r = 1;
-    while (r != 0) {
-      r = a%b;
-      if (r != 0) {
-        a = b;
-        b = r;
+    int gcd = 1;
+    int x = Math.abs(a);
+    int y = Math.abs(b);
+    for (int i = 2; i <= Math.min(x,y); i++) {
+      if (a % i == 0 && b % i == 0) {
+        gcd = i;
       }
     }
-    return b;
-    // int divisor = 1;
-    // for(int i = 2; i <= Math.min(a, b); i++) {
-    //   if(a % i == 0 && b % i == 0) {
-    //     divisor = i;
-    //   }
-    // }
-    // //System.out.println(gcd);
-    // //holy why does it not work/?????
-    // return divisor;
+    return gcd;
   }
 
   private void reduce() {
     int common = gcd(getNumerator(), getDenominator());
-    numerator /= common;
-    denominator /= common;
+    if (common != 0) {
+      numerator /= common;
+      denominator /= common;
+    }
   }
 
   public RationalNumber multiply(RationalNumber other) {
@@ -108,14 +90,6 @@ public class RationalNumber extends Number {
 
   //static method to get least common denominator
   public static int getLCD(int a, int b) {
-    // int gcd = 1;
-    // int factor = 1;
-    // while (true) {
-    //   if ((factor * a) % b == 0) {
-    //     return factor * a;
-    //   }
-    //   factor++;
-    // }
     int common = gcd(a,b);
     return (a*b)/common;
   }
