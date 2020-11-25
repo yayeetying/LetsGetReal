@@ -2,9 +2,12 @@ public abstract class Number {
 
   public abstract double getValue();
 
-  // public int compareTo(Number other) {
-  //
-  // }
+  public int compareTo(Number other) {
+    if (this.equals(other)) return 0;
+    double diff = this.getValue() - other.getValue();
+    if (diff < 0) return -1;
+    else {return 1;}
+  }
 
   public boolean equals(Number other) {
     //^Number other: means you can take in a RealNumber or a Rational

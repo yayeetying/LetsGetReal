@@ -210,7 +210,13 @@ public class Tester {
     //RationalNumber.equals(RationalNumber); is the only one to call RatNum's overrided equals
     System.out.println(cat.equals(e)); //Rat.equals(Real);
     System.out.println(e.equals(cat)); //Real.equals(Rat);
+    System.out.println();
 
-
+    System.out.println(e.compareTo(cat)); //e=0; cat=3/5
+    System.out.println(cat.compareTo(e));
+    System.out.println(cat.compareTo(cat));
+    System.out.println(e.compareTo(e));
+    System.out.println(e.compareTo(dog)); //dog = -5
+    System.out.println(dog.compareTo(e)); 
   }
 }
