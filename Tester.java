@@ -217,6 +217,13 @@ public class Tester {
     System.out.println(cat.compareTo(cat));
     System.out.println(e.compareTo(e));
     System.out.println(e.compareTo(dog)); //dog = -5
-    System.out.println(dog.compareTo(e)); 
+    System.out.println(dog.compareTo(e));
+
+    System.out.println();
+    System.out.println(bulue.add(yellow));
+    System.out.println(bulue.subtract(yellow));
+    System.out.println(bulue.multiply(yellow));
+    System.out.println(bulue.divide(yellow));
+    System.out.println(yellow.divide(bulue));
   }
 }

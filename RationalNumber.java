@@ -49,8 +49,8 @@ public class RationalNumber extends Number {
   }
 
   //Rational.equals(Rational) calls this (RationalNumber method)
-  //Real.equals(Real) or Real.equals(Rational) calls equals method from RealNumber class
-  //what about Rational.equals(Real)? *calls equals method from RealNumber class
+  //Real.equals(Real) or Real.equals(Rational) calls equals method from Number class
+  //what about Rational.equals(Real)? *calls equals method from Number class
   public boolean equals(RationalNumber other) { //overriden method
     //System.out.println("pog");
     return this.getNumerator() == other.getNumerator() && this.getDenominator() == other.getDenominator();
@@ -92,7 +92,6 @@ public class RationalNumber extends Number {
     int common = gcd(getNumerator(), getDenominator());
     numerator /= common;
     denominator /= common;
-    //System.out.println(""+numerator+" " + denominator);
   }
 
   public RationalNumber multiply(RationalNumber other) {
