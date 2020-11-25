@@ -21,7 +21,7 @@ public class RationalNumber extends RealNumber {
       numerator *= -1;
       denominator *= -1;
     }
-    if (this.getValue() != 0.0) reduce(); //(1/-4); switch the negate sign
+    reduce();
   }
 
   public double getValue() { //overridden method
@@ -38,7 +38,7 @@ public class RationalNumber extends RealNumber {
 
   //return a new RationalNumber w/ nume and deno of this RationalNumber reversed
   public RationalNumber reciprocal() {
-    RationalNumber reci = new RationalNumber(this.getDenominator(), this.getNumerator());
+    RationalNumber reci = new RationalNumber(getDenominator(), getNumerator());
     return reci;
   }
 
@@ -51,34 +51,19 @@ public class RationalNumber extends RealNumber {
   }
 
   public String toString() {
+    //if (getDenominator() == 1) return "" + getNumerator();
+    //if (getNumerator() == 0) return "" + 0;
     return "" + this.getNumerator() + "/" + this.getDenominator();
   }
 
-  //calculate the GCD of 2 integers; http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-  //public static int gcd(int a, int b) {
   private static int gcd(int a, int b) {
-  //   int gcd = 1;
-  //   for(int i = 2; i < Math.min(a, b); i++) {
-  //     if(a % i == 0 && b % i == 0) {
-  //       gcd = i;
-  //     }
-  //   }
-  //   return gcd;
-  // }
-    if (a < b) {
-      int temp = a;
-      a = b;
-      b = temp;
-    } //a will always be >= b
-    int r = 1;
-    while (r != 0) {
-      r = a%b;
-      if (r != 0) {
-        a = b;
-        b = r;
+    int gcd = 1;
+    for(int i = 2; i <= Math.min(a, b); i++) {
+      if(a % i == 0 && b % i == 0) {
+        gcd = i;
       }
     }
-    return b;
+    return gcd;
   }
 
   private void reduce() {
@@ -99,16 +84,12 @@ public class RationalNumber extends RealNumber {
     return quotient;
   }
 
+  //static method to get least common denominator
   public static int getLCD(int a, int b) {
-    int gcd = 1;
-    int factor = 1;
-    while (true) {
-      if ((factor * a) % b == 0) {
-        return factor * a;
-      }
-      factor++;
-    }
+    int common = gcd(a,b);
+    return (a*b)/common;
   }
+  //30/-50 - 63/81. Expected -7/5 | Output -70/50
 
   public RationalNumber add(RationalNumber other) {
     int deno = getLCD(this.getDenominator(), other.getDenominator());
