@@ -1,5 +1,4 @@
-// public class RationalNumber extends Number {
-public class RationalNumber extends RealNumber {
+public class RationalNumber extends Number {
   //'extends': RationalNumber (subclass/child) inherited Number (superclass/parent)
   //subclass inherits instance variables and methods from superclass
   //can override inherited methods in the subclass to modify the fxn of the method
@@ -11,7 +10,7 @@ public class RationalNumber extends RealNumber {
   //if the denominator is 0, make the fraction 0/1 instead
   //If the denominator is negative, negate both numerator and denominator
   public RationalNumber(int nume, int deno) {
-    super(0.0); //this value is ignored!
+    //super(0.0); //this value is ignored!
     numerator = nume;
     denominator = deno;
     if (deno == 0) {

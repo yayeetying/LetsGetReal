@@ -1,4 +1,4 @@
-public class RealNumber {
+public class RealNumber extends Number{
   //instance variables
   private double value;
 
@@ -15,15 +15,7 @@ public class RealNumber {
     return "" + getValue();
   }
 
-  public boolean equals(RealNumber other) {
-    //System.out.println("yoo");
-    if (this.getValue() == 0 && other.getValue() == 0) {
-      return true;
-    }
-    double percentDiff = Math.abs((this.getValue()-other.getValue()) /
-                        ((this.getValue()+other.getValue()) /2.0)) * 100;
-    return percentDiff <= 0.001;
-  }
+  //has inherited .equals() method;
 
   public RealNumber add(RealNumber other) {
     //other can be ANY RealNumber, including a RationalNumber

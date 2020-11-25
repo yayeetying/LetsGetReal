@@ -85,10 +85,11 @@ public class Tester {
     System.out.println();
     System.out.println();
 
+
     RationalNumber cat = new RationalNumber(3,5);
     RationalNumber dog = new RationalNumber(-10, 2);
     RationalNumber frog = new RationalNumber(2, -10);
-    RationalNumber log = new RationalNumber(0, 0);
+    RationalNumber log = new RationalNumber(10,0);
     RationalNumber stonks = new RationalNumber(0, 11);
     RationalNumber pog = new RationalNumber(10, 0);
     RationalNumber tog = new RationalNumber(1, 3);
@@ -114,9 +115,9 @@ public class Tester {
     RealNumber bub = new RealNumber(0.6);
     System.out.println(bub.equals(cat));
     System.out.println(cat.equals(bub));
-    System.out.println(f.add(log));
-    System.out.println(f.add(dog));
-    System.out.println(log.add(f));
+    //System.out.println(f.add(log));
+    //System.out.println(f.add(dog));
+    //System.out.println(log.add(f));
     System.out.println();
 
     for (int i = 0; i < rat.length; i++) {
@@ -193,6 +194,22 @@ public class Tester {
 
     System.out.println(yellow.add(bae));
     System.out.println(bae.add(yellow));
+
+    System.out.println(bae.subtract(yellow));
+    System.out.println(yellow.subtract(bae));
+    System.out.println();
+
+    for (int i = 0; i < colors.length-1; i++) {
+      System.out.println(colors[i].add(colors[i+1]));
+      System.out.println(colors[i].subtract(colors[i+1]));
+      System.out.println();
+    }
+
+    System.out.println(b.equals(e));//RealNumber.equals(RealNumber)
+    System.out.println(cat.equals(cat));
+    //RationalNumber.equals(RationalNumber); is the only one to call RatNum's overrided equals
+    System.out.println(cat.equals(e)); //Rat.equals(Real);
+    System.out.println(e.equals(cat)); //Real.equals(Rat);
 
 
   }
